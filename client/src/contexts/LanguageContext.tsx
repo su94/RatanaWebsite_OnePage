@@ -104,8 +104,7 @@ const translations: Translations = {
     'footer.location': 'New York, NY 10001',
     'footer.phone': '+1 (555) 123-4567',
     'footer.email': 'contact@ratanaconsulting.com',
-    'footer.copyright': '©',
-    'footer.rightsReserved': 'All rights reserved.',
+    'footer.copyright': 'Ratana\nCopyright © 2025 All rights reserved',
   },
   ar: {
     'nav.ourStory': 'قصتنا',
@@ -175,8 +174,7 @@ const translations: Translations = {
     'footer.location': 'نيويورك، NY 10001',
     'footer.phone': '+1 (555) 123-4567',
     'footer.email': 'contact@ratanaconsulting.com',
-    'footer.copyright': '©',
-    'footer.rightsReserved': 'جميع الحقوق محفوظة.',
+    'footer.copyright': 'رتانا\nحقوق النشر © 2025 جميع الحقوق محفوظة',
   },
 };
 

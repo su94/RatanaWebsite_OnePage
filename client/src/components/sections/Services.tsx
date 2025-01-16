@@ -61,10 +61,10 @@ const Services = () => {
           {services.map((service) => (
             <Card key={service.key} className="hover:shadow-lg transition-shadow h-full">
               <CardHeader>
-                <h3 className="text-xl font-semibold leading-tight">{t(service.key)}</h3>
+                <h3 className="text-xl font-bold leading-tight mb-4">{t(service.key)}</h3>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600 text-sm sm:text-base">{t(service.description)}</p>
+                <p className="text-gray-500 text-sm font-light leading-relaxed">{t(service.description)}</p>
               </CardContent>
             </Card>
           ))}
