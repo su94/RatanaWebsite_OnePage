@@ -2,52 +2,54 @@
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const services = [
-  {
-    key: 'services.strategicPlanning',
-    description: 'services.strategicPlanning',
-  },
-  {
-    key: 'services.contentCreation',
-    description: 'services.contentCreation',
-  },
-  {
-    key: 'services.crisisCommunication',
-    description: 'services.crisisCommunication',
-  },
-  {
-    key: 'services.marketing',
-    description: 'services.marketing',
-  },
-  {
-    key: 'services.consultation',
-    description: 'services.consultation',
-  },
-  {
-    key: 'services.mediaTraining',
-    description: 'services.mediaTraining',
-  },
-  {
-    key: 'services.eventManagement',
-    description: 'services.eventManagement',
-  },
-  {
-    key: 'services.mediaProduction',
-    description: 'services.mediaProduction',
-  },
-  {
-    key: 'services.monitoring',
-    description: 'services.monitoring',
-  },
-  {
-    key: 'services.pressReleases',
-    description: 'services.pressReleases',
-  },
-  {
-    key: 'services.mediaOutreach',
-    description: 'services.mediaOutreach',
-  },
-];
+const services = {
+  en: [
+    {
+      title: 'Press Releases and Media Kits',
+    },
+    {
+      title: 'Media Outreach and Relationship Building',
+    },
+    {
+      title: 'Monitoring and Reporting',
+    },
+    {
+      title: 'Media Production',
+    },
+    {
+      title: 'Event Management and Press Conferences',
+    },
+    {
+      title: 'Media Training and Preparation',
+    },
+    {
+      title: 'Consultation Services',
+    }
+  ],
+  ar: [
+    {
+      title: 'البيانات الصحفية والحقائب الإعلامية',
+    },
+    {
+      title: 'التواصل الإعلامي وبناء العلاقات',
+    },
+    {
+      title: 'المراقبة وإعداد التقارير',
+    },
+    {
+      title: 'الإنتاج الإعلامي',
+    },
+    {
+      title: 'إدارة الفعاليات والمؤتمرات الصحفية',
+    },
+    {
+      title: 'التدريب الإعلامي والتحضير',
+    },
+    {
+      title: 'الخدمات الاستشارية',
+    }
+  ]
+};
 
 const Services = () => {
   const { t, language } = useLanguage();
@@ -59,18 +61,13 @@ const Services = () => {
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">{t('services.title')}</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {services.map((service) => (
-            <Card key={service.key} className="hover:shadow-lg transition-shadow h-full">
+          {services[language].map((service, index) => (
+            <Card key={index} className="hover:shadow-lg transition-shadow h-full">
               <CardHeader>
-                <h3 className={`text-xl font-extrabold text-gray-900 leading-tight mb-4 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                  {t(service.key)}
+                <h3 className={`text-xl font-bold text-gray-900 leading-tight ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                  {service.title}
                 </h3>
               </CardHeader>
-              <CardContent>
-                <p className={`text-gray-500 text-sm font-light leading-relaxed ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                  {t(service.description)}
-                </p>
-              </CardContent>
             </Card>
           ))}
         </div>
