@@ -1,0 +1,38 @@
+i want the services to be like this:
+the services shows only the title, those are the titles:
+- Press Releases and Media Kits,
+- Media Outreach and Relationship Building,
+- Monitoring and Reporting,
+- Media Production,
+- Event Management and Press Conferences,
+- Media Training and Preparation,
+- Consultation Services,
+- Marketing and Advertising,
+- Crisis Communication Management,
+- Content Creation,
+- Strategic Media Planning and Advisory.
+
+then i want the following description appears once hover over the specific service, find the discerption for each services accordingly:
+- Crafting compelling press releases that effectively communicate your key messages and newsworthy events. We also design comprehensive media kits that provide journalists with all the necessary information and materials.
+
+- Establishing and maintaining strong relationships with key media outlets and journalists. We proactively pitch stories and secure media placements in top-tier publications and broadcasts.
+
+- Continuously monitoring media coverage and public sentiment related to your organization. We provide detailed reports and analysis to track the effectiveness of media strategies and identify opportunities for improvement.
+
+- End-to-end film production, including pre-production, filming, and post-production. We produce captivating television and radio content, as well as develop content for online platforms and digital campaigns.
+
+- Planning and executing media events, such as press conferences, product launches, and corporate announcements. We coordinate all logistics and manage media attendance to ensure successful and well-covered events.
+
+- Conducting media training sessions to prepare your spokespeople for interviews and public appearances. We provide detailed briefings and practice sessions to ensure clear, confident, and effective communication.
+
+- Producing tailored media strategies to meet client objectives and advising on brand positioning and identity. We also conduct comprehensive market analysis to inform content strategies, ensuring your brand stands out in the market.
+
+- Implementing effective digital strategies, such as SEO, PPC, and social media management. We also create impactful print, outdoor, and broadcast advertisements to enhance your brand's visibility and reach.
+
+- Developing and implementing crisis communication strategies to manage and mitigate negative publicity. We provide real-time support and messaging during crises to protect and restore your brand's reputation.
+
+- Crafting compelling narratives for web, print, and digital platforms. We produce high-quality videos from concept to final cut, design visually striking graphics for various media, and capture images that tell a story. Additionally, we create engaging animations tailored for diverse audiences.
+
+- Developing and implementing strategic media plans that are aligned with your business objectives. We provide expert advice on media engagement strategies to optimize coverage and visibility, ensuring your brand gains the attention it deserves.
+
+
