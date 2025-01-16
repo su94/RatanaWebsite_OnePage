@@ -1,55 +1,56 @@
+
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const services = [
   {
     key: 'services.strategicPlanning',
-    description: 'services.strategicPlanning.description',
+    description: 'services.strategicPlanning',
   },
   {
     key: 'services.contentCreation',
-    description: 'services.contentCreation.description',
+    description: 'services.contentCreation',
   },
   {
     key: 'services.crisisCommunication',
-    description: 'services.crisisCommunication.description',
+    description: 'services.crisisCommunication',
   },
   {
     key: 'services.marketing',
-    description: 'services.marketing.description',
+    description: 'services.marketing',
   },
   {
     key: 'services.consultation',
-    description: 'services.consultation.description',
+    description: 'services.consultation',
   },
   {
     key: 'services.mediaTraining',
-    description: 'services.mediaTraining.description',
+    description: 'services.mediaTraining',
   },
   {
     key: 'services.eventManagement',
-    description: 'services.eventManagement.description',
+    description: 'services.eventManagement',
   },
   {
     key: 'services.mediaProduction',
-    description: 'services.mediaProduction.description',
+    description: 'services.mediaProduction',
   },
   {
     key: 'services.monitoring',
-    description: 'services.monitoring.description',
+    description: 'services.monitoring',
   },
   {
     key: 'services.pressReleases',
-    description: 'services.pressReleases.description',
+    description: 'services.pressReleases',
   },
   {
     key: 'services.mediaOutreach',
-    description: 'services.mediaOutreach.description',
+    description: 'services.mediaOutreach',
   },
 ];
 
 const Services = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <section id="services" className="py-16 bg-gray-50">
@@ -61,10 +62,14 @@ const Services = () => {
           {services.map((service) => (
             <Card key={service.key} className="hover:shadow-lg transition-shadow h-full">
               <CardHeader>
-                <h3 className="text-xl font-bold leading-tight mb-4">{t(service.key)}</h3>
+                <h3 className={`text-xl font-extrabold text-gray-900 leading-tight mb-4 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                  {t(service.key)}
+                </h3>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-500 text-sm font-light leading-relaxed">{t(service.description)}</p>
+                <p className={`text-gray-500 text-sm font-light leading-relaxed ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                  {t(service.description)}
+                </p>
               </CardContent>
             </Card>
           ))}
