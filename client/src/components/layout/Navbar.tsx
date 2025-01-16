@@ -10,17 +10,23 @@ const Navbar = () => {
   const { language, setLanguage, t } = useLanguage();
 
   const menuItems = [
-    { label: t('nav.ourStory'), href: "#our-story" },
-    { label: t('nav.about'), href: "#about" },
-    { label: t('nav.services'), href: "#services" },
-    { label: t('nav.customers'), href: "#customers" },
-    { label: t('nav.contact'), href: "#contact" },
+    { label: t("nav.ourStory"), href: "#our-story" },
+    { label: t("nav.about"), href: "#about" },
+    { label: t("nav.services"), href: "#services" },
+    { label: t("nav.customers"), href: "#customers" },
+    { label: t("nav.contact"), href: "#contact" },
   ];
 
   const socialLinks = [
-    { icon: SiLinkedin, href: "http://www.linkedin.com/in/ratana-consulting-3691a3260" },
+    {
+      icon: SiLinkedin,
+      href: "http://www.linkedin.com/in/ratana-consulting-3691a3260",
+    },
     { icon: SiInstagram, href: "https://www.instagram.com/ratanaconsulting/" },
-    { icon: SiFacebook, href: "https://www.facebook.com/people/Ratana-Consulting/100088684045921/" },
+    {
+      icon: SiFacebook,
+      href: "https://www.facebook.com/people/Ratana-Consulting/100088684045921/",
+    },
   ];
 
   return (
@@ -29,9 +35,9 @@ const Navbar = () => {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link href="/">
-              <img 
-                src="/attached_assets/ratanalogo.png" 
-                alt="Ratana" 
+              <img
+                src="/attached_assets/ratanalogo.png"
+                alt="Ratana"
                 className="h-12 w-40"
               />
             </Link>
@@ -57,11 +63,11 @@ const Navbar = () => {
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')}
+                onClick={() => setLanguage(language === "en" ? "ar" : "en")}
                 className="flex items-center gap-2"
               >
                 <Globe className="h-4 w-4" />
-                {language === 'en' ? 'العربية' : 'English'}
+                {language === "en" ? "العربية" : "English"}
               </Button>
             </div>
 
@@ -102,7 +108,9 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div
         className={`md:hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0 pointer-events-none"
+          isOpen
+            ? "max-h-screen opacity-100"
+            : "max-h-0 opacity-0 pointer-events-none"
         } overflow-hidden bg-white border-t`}
       >
         <div className="px-4 pt-2 pb-3 space-y-1">
@@ -122,13 +130,13 @@ const Navbar = () => {
             variant="ghost"
             size="sm"
             onClick={() => {
-              setLanguage(language === 'en' ? 'ar' : 'en');
+              setLanguage(language === "en" ? "ar" : "en");
               setIsOpen(false);
             }}
             className="w-full justify-start px-3 py-2 text-left hover:bg-gray-50"
           >
             <Globe className="h-4 w-4 mr-2" />
-            {language === 'en' ? 'العربية' : 'English'}
+            {language === "en" ? "العربية" : "English"}
           </Button>
 
           {/* Mobile Social Links */}
