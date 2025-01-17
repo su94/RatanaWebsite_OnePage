@@ -84,15 +84,17 @@ const Services = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true, margin: "-50px" }}
             >
-              <Card className="group hover:scale-105 transition-all duration-300 h-full cursor-pointer relative overflow-hidden">
+              <Card className="group hover:scale-105 transition-all duration-300 h-full cursor-pointer relative overflow-hidden min-h-[200px]">
                 <CardHeader>
-                  <h3 className={`text-xl font-bold text-gray-900 leading-tight ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                  <h3 className={`text-xl font-bold text-gray-900 leading-tight mb-2 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
                     {service.title}
                   </h3>
-                  <div className={`absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                    <p className="text-sm text-white">
-                      {service.description}
-                    </p>
+                  <div className={`absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                    <div className="max-h-full overflow-y-auto">
+                      <p className="text-sm text-white leading-relaxed">
+                        {service.description}
+                      </p>
+                    </div>
                   </div>
                 </CardHeader>
               </Card>
