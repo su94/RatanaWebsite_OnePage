@@ -42,7 +42,7 @@ const services = {
       description: "Crafting compelling narratives for web, print, and digital platforms. We produce high-quality videos, design visually striking graphics, and create engaging animations tailored for diverse audiences.",
     },
     {
-      title: "Crisis Communication",
+      title: "Crisis Management",
       description: "Developing and implementing crisis communication strategies to manage and mitigate negative publicity. We provide real-time support and messaging during crises to protect your brand's reputation.",
     },
     {
@@ -88,8 +88,8 @@ const services = {
       description: "صياغة روايات مؤثرة للويب والمطبوعات والمنصات الرقمية. ننتج مقاطع فيديو عالية الجودة، ونصمم رسومات بصرية مميزة، وننشئ رسومات متحركة مخصصة لمختلف الجماهير.",
     },
     {
-      title: "اتصالات الأزمات",
-      description: "تطوير وتنفيذ استراتيجيات اتصال الأزمات لإدارة وتخفيف الدعاية السلبية. نقدم دعمًا فوريًا ورسائل أثناء الأزمات لحماية سمعة علامتك التجارية.",
+      title: "ادارة الأزمات",
+      description: "تطوير وتنفيذ استراتيجيات اتصال لإدارةالأزمات وتخفيف الدعاية السلبية. نقدم دعمًا فوريًا ورسائل أثناء الأزمات لحماية سمعة علامتك التجارية.",
     },
     {
       title: "خدمات التسويق",

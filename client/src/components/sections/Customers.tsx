@@ -3,13 +3,13 @@ import { useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext"; // Import useLanguage for translation
 
 const customers = [
-  { id: 1, name: "Customer 1", logo: "/logos/customer1.svg" },
-  { id: 2, name: "Customer 2", logo: "/logos/customer2.svg" },
-  { id: 3, name: "Customer 3", logo: "/logos/customer3.svg" },
-  { id: 4, name: "Customer 4", logo: "/logos/customer4.svg" },
-  { id: 5, name: "Customer 5", logo: "/logos/customer5.svg" },
-  { id: 6, name: "Customer 6", logo: "/logos/customer6.svg" },
-  { id: 7, name: "Customer 7", logo: "/logos/customer7.svg" },
+  { id: 1, name: "BenchMark", logo: "attached_assets/benchmark.webp" },
+  { id: 2, name: "GIZ", logo: "attached_assets/giz.webp" },
+  { id: 3, name: "Iseet", logo: "attached_assets/iseet.webp" },
+  { id: 4, name: "Ithad Bank", logo: "attached_assets/ithadbank.webp" },
+  { id: 5, name: "Sada Bodcast", logo: "attached_assets/sada.webp" },
+  { id: 6, name: "Sage Films", logo: "attached_assets/sagefilms.webp" },
+  { id: 7, name: "Wish Box", logo: "attached_assets/wishbox.webp" },
 ];
 
 const Customers = () => {
