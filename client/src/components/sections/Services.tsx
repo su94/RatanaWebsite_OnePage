@@ -77,22 +77,18 @@ const Services = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {services[language].map((service, index) => (
-            <HoverCard key={index}>
-              <HoverCardTrigger asChild>
-                <Card className="hover:shadow-lg transition-shadow h-full cursor-pointer">
-                  <CardHeader>
-                    <h3 className={`text-xl font-bold text-gray-900 leading-tight ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                      {service.title}
-                    </h3>
-                  </CardHeader>
-                </Card>
-              </HoverCardTrigger>
-              <HoverCardContent className={`p-4 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                <p className="text-sm text-gray-600">
-                  {service.description}
-                </p>
-              </HoverCardContent>
-            </HoverCard>
+            <Card key={index} className="group hover:scale-105 transition-all duration-300 h-full cursor-pointer relative overflow-hidden">
+              <CardHeader>
+                <h3 className={`text-xl font-bold text-gray-900 leading-tight ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                  {service.title}
+                </h3>
+                <div className={`absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                  <p className="text-sm text-white">
+                    {service.description}
+                  </p>
+                </div>
+              </CardHeader>
+            </Card>
           ))}
         </div>
       </div>

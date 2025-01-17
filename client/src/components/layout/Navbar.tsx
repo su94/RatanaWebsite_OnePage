@@ -14,7 +14,7 @@ const Navbar = () => {
     { label: t("nav.about"), href: "#about" },
     { label: t("nav.services"), href: "#services" },
     { label: t("nav.customers"), href: "#customers" },
-    { label: t("nav.contact"), href: "#contact" },
+    { label: t("nav.contact"), href: "#contact", onClick: () => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) },
   ];
 
   const socialLinks = [

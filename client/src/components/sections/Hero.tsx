@@ -18,6 +18,7 @@ const Hero = () => {
             size="lg" 
             variant="outline" 
             className="text-white border-white hover:bg-white hover:text-black"
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
             {t('hero.contact')}
           </Button>
