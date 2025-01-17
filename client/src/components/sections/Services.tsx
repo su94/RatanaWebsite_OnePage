@@ -1,7 +1,7 @@
 
-import { Card, CardHeader, CardContent } from "@/components/ui/card";
-import { HoverCard, HoverCardTrigger, HoverCardContent } from "@/components/ui/hover-card";
+import { Card, CardHeader } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { motion } from "framer-motion";
 
 const services = {
   en: [
@@ -77,18 +77,26 @@ const Services = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {services[language].map((service, index) => (
-            <Card key={index} className="group hover:scale-105 transition-all duration-300 h-full cursor-pointer relative overflow-hidden">
-              <CardHeader>
-                <h3 className={`text-xl font-bold text-gray-900 leading-tight ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                  {service.title}
-                </h3>
-                <div className={`absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                  <p className="text-sm text-white">
-                    {service.description}
-                  </p>
-                </div>
-              </CardHeader>
-            </Card>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true, margin: "-50px" }}
+            >
+              <Card className="group hover:scale-105 transition-all duration-300 h-full cursor-pointer relative overflow-hidden">
+                <CardHeader>
+                  <h3 className={`text-xl font-bold text-gray-900 leading-tight ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                    {service.title}
+                  </h3>
+                  <div className={`absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                    <p className="text-sm text-white">
+                      {service.description}
+                    </p>
+                  </div>
+                </CardHeader>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>
