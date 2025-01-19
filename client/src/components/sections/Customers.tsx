@@ -21,12 +21,14 @@ const Customers = () => {
   const controls = useAnimation();
   const { t } = useLanguage();
   const [isPlaying, setIsPlaying] = useState(true);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const totalSlides = Math.ceil(customers.length / 4);
 
   useEffect(() => {
     const startAnimation = async () => {
       if (isPlaying) {
         await controls.start({
-          x: [0, -100 * (customers.length - 4)],
+          x: [0, -264 * (customers.length - 4)],
           transition: {
             x: {
               repeat: Infinity,
@@ -42,11 +44,11 @@ const Customers = () => {
     startAnimation();
   }, [controls, isPlaying]);
 
-  const handleSlideChange = (direction: 'left' | 'right') => {
+  const handleDotClick = (index: number) => {
     setIsPlaying(false);
-    const moveAmount = direction === 'left' ? 264 : -264;
+    setCurrentIndex(index);
     controls.start({
-      x: `+=${moveAmount}`,
+      x: -264 * index * 4,
       transition: { duration: 0.5 }
     });
   };
@@ -64,29 +66,17 @@ const Customers = () => {
         </div>
 
         <div className="relative overflow-hidden">
-          <div className="flex justify-center gap-4 mb-6">
-            <button
-              onClick={() => handleSlideChange('left')}
-              className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-            >
-              <span className="block w-6 h-6 border-t-2 border-l-2 border-gray-600 transform -rotate-45"/>
-            </button>
-            <button
-              onClick={() => setIsPlaying(!isPlaying)}
-              className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-            >
-              {isPlaying ? (
-                <span className="block w-6 h-6 border-l-2 border-gray-600"/>
-              ) : (
-                <span className="block w-0 h-0 border-t-[8px] border-t-transparent border-l-[12px] border-l-gray-600 border-b-[8px] border-b-transparent ml-1"/>
-              )}
-            </button>
-            <button
-              onClick={() => handleSlideChange('right')}
-              className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-            >
-              <span className="block w-6 h-6 border-t-2 border-r-2 border-gray-600 transform rotate-45"/>
-            </button>
+          <div className="flex justify-center gap-2 mb-6">
+            {Array.from({ length: totalSlides }, (_, i) => (
+              <button
+                key={i}
+                onClick={() => handleDotClick(i)}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  currentIndex === i ? 'bg-gray-600' : 'bg-gray-300'
+                }`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
           </div>
 
           <div className="flex gap-8">
