@@ -1,6 +1,6 @@
 
 import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const customers = [
@@ -20,24 +20,36 @@ const customers = [
 const Customers = () => {
   const controls = useAnimation();
   const { t } = useLanguage();
+  const [isPlaying, setIsPlaying] = useState(true);
 
   useEffect(() => {
     const startAnimation = async () => {
-      await controls.start({
-        x: [0, -100 * (customers.length - 4)],
-        transition: {
-          x: {
-            repeat: Infinity,
-            repeatType: "reverse",
-            duration: 20,
-            ease: "linear",
+      if (isPlaying) {
+        await controls.start({
+          x: [0, -100 * (customers.length - 4)],
+          transition: {
+            x: {
+              repeat: Infinity,
+              repeatType: "reverse",
+              duration: 20,
+              ease: "linear",
+            },
           },
-        },
-      });
+        });
+      }
     };
 
     startAnimation();
-  }, [controls]);
+  }, [controls, isPlaying]);
+
+  const handleSlideChange = (direction: 'left' | 'right') => {
+    setIsPlaying(false);
+    const moveAmount = direction === 'left' ? 264 : -264;
+    controls.start({
+      x: `+=${moveAmount}`,
+      transition: { duration: 0.5 }
+    });
+  };
 
   return (
     <section id="customers" className="py-16 bg-gray-50">
@@ -52,18 +64,31 @@ const Customers = () => {
         </div>
 
         <div className="relative overflow-hidden">
-          <button 
-            onClick={() => controls.start({ x: 0 })}
-            className="absolute left-2 top-1/2 z-10 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow-lg"
-          >
-            ←
-          </button>
-          <button 
-            onClick={() => controls.start({ x: -100 * (customers.length - 4) })}
-            className="absolute right-2 top-1/2 z-10 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow-lg"
-          >
-            →
-          </button>
+          <div className="flex justify-center gap-4 mb-6">
+            <button
+              onClick={() => handleSlideChange('left')}
+              className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+            >
+              <span className="block w-6 h-6 border-t-2 border-l-2 border-gray-600 transform -rotate-45"/>
+            </button>
+            <button
+              onClick={() => setIsPlaying(!isPlaying)}
+              className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+            >
+              {isPlaying ? (
+                <span className="block w-6 h-6 border-l-2 border-gray-600"/>
+              ) : (
+                <span className="block w-0 h-0 border-t-[8px] border-t-transparent border-l-[12px] border-l-gray-600 border-b-[8px] border-b-transparent ml-1"/>
+              )}
+            </button>
+            <button
+              onClick={() => handleSlideChange('right')}
+              className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+            >
+              <span className="block w-6 h-6 border-t-2 border-r-2 border-gray-600 transform rotate-45"/>
+            </button>
+          </div>
+
           <div className="flex gap-8">
             <motion.div 
               className="flex gap-8" 
