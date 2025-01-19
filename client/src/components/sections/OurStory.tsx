@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -10,22 +11,13 @@ const OurStory = () => {
         <div className="relative">
           <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gray-50" />
           <div className="relative">
-            <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-start">
-              <div className="relative lg:self-center">
-                <h3 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
-                  {t('ourStory.title')}
-                </h3>
-                <div className="mt-3 text-lg text-gray-500 space-y-4">
-                  <p>{t('ourStory.content')}</p>
-                </div>
-              </div>
-
+            <div className="flex flex-col items-center">
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="mt-10 lg:mt-0 lg:-ml-16 relative"
+                className="relative w-full max-w-2xl"
               >
                 <div className="relative block w-full rounded-lg overflow-hidden">
                   <img
@@ -35,6 +27,15 @@ const OurStory = () => {
                   />
                 </div>
               </motion.div>
+
+              <div className="mt-8 text-center max-w-2xl">
+                <h3 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
+                  {t('ourStory.title')}
+                </h3>
+                <div className="mt-3 text-lg text-gray-500">
+                  <p>{t('ourStory.content')}</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

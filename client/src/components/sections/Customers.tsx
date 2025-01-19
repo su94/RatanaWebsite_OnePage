@@ -10,6 +10,10 @@ const customers = [
   { id: 5, name: "Sada Bodcast", logo: "attached_assets/sada.webp" },
   { id: 6, name: "Sage Films", logo: "attached_assets/sagefilms.webp" },
   { id: 7, name: "Wish Box", logo: "attached_assets/wishbox.webp" },
+  { id: 8, name: "Musajjel", logo: "attached_assets/musajjel.webp" },
+  { id: 9, name: "Columbia Global Center Amman", logo: "attached_assets/columbiaglobal.webp" },
+  { id: 10, name: "Service and Public Administration Commission", logo: "attached_assets/spac.webp" },
+  { id: 11, name: "IUCN", logo: "attached_assets/iucn.webp" },
 ];
 
 const Customers = () => {
