@@ -10,8 +10,8 @@ const OurStory = () => {
         <div className="relative">
           <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gray-50" />
           <div className="relative">
-            <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-              <div className="relative">
+            <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-start">
+              <div className="relative lg:self-center">
                 <h3 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
                   {t('ourStory.title')}
                 </h3>
