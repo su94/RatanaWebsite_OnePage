@@ -1,4 +1,3 @@
-
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -11,10 +10,22 @@ const customers = [
   { id: 5, name: "Sada Bodcast", logo: "attached_assets/sada.webp" },
   { id: 6, name: "Sage Films", logo: "attached_assets/sagefilms.webp" },
   { id: 7, name: "Wish Box", logo: "attached_assets/wishbox.webp" },
-  { id: 8, name: "Musajjel", logo: "attached_assets/musajjel.webp" },
-  { id: 9, name: "Columbia Global Center Amman", logo: "attached_assets/columbiaglobal.webp" },
-  { id: 10, name: "Service and Public Administration Commission", logo: "attached_assets/spac.webp" },
-  { id: 11, name: "IUCN", logo: "attached_assets/iucn.webp" },
+  { id: 8, name: "Musajjel", logo: "attached_assets/Musajjel.jpg" },
+  {
+    id: 9,
+    name: "Columbia Global Center Amman",
+    logo: "attached_assets/ammancolumbiaglobal.jpg",
+  },
+  {
+    id: 10,
+    name: "Service and Public Administration Commission",
+    logo: "attached_assets/service and public administration commission.png",
+  },
+  {
+    id: 11,
+    name: "IUCN",
+    logo: "attached_assets/iucn-international-union-for-conservation-of-nature.webp",
+  },
 ];
 
 const Customers = () => {
@@ -49,7 +60,7 @@ const Customers = () => {
     setCurrentIndex(index);
     controls.start({
       x: -264 * index * 4,
-      transition: { duration: 0.5 }
+      transition: { duration: 0.5 },
     });
   };
 
@@ -58,10 +69,10 @@ const Customers = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-            {t('customers.title')}
+            {t("customers.title")}
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            {t('customers.subtitle')}
+            {t("customers.subtitle")}
           </p>
         </div>
 
@@ -72,7 +83,7 @@ const Customers = () => {
                 key={i}
                 onClick={() => handleDotClick(i)}
                 className={`w-3 h-3 rounded-full transition-colors ${
-                  currentIndex === i ? 'bg-gray-600' : 'bg-gray-300'
+                  currentIndex === i ? "bg-gray-600" : "bg-gray-300"
                 }`}
                 aria-label={`Go to slide ${i + 1}`}
               />
@@ -80,11 +91,14 @@ const Customers = () => {
           </div>
 
           <div className="flex gap-8">
-            <motion.div 
-              className="flex gap-8" 
+            <motion.div
+              className="flex gap-8"
               animate={controls}
               drag="x"
-              dragConstraints={{ right: 0, left: -100 * (customers.length - 4) }}
+              dragConstraints={{
+                right: 0,
+                left: -100 * (customers.length - 4),
+              }}
             >
               {customers.map((customer) => (
                 <div key={customer.id} className="flex-none w-64">
