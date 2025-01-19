@@ -88,7 +88,7 @@ const translations: Translations = {
       </p>
     `,
     "customers.title": "Our Customers",
-    "customers.subtitle": "Trusted by",
+    "customers.subtitle": "Trusted by leading organizations including Musajjel, Columbia Global Center Amman, Service and Public Administration Commission, and IUCN",
     "contact.title": "Contact Us",
     "contact.subtitle": "Get in touch with our team",
     "contact.name": "Name",
@@ -171,7 +171,7 @@ const translations: Translations = {
                       الرقمية. لهذا السبب، فإن المحتوى الذي ننتجه يخضع لتدقيق لغوي وإبداعي وقانوني وسياسي صارم، 
                       ويكون دائماً حساساً لمفاهيم الإدماج الاجتماعي وحقوق الإنسان.`,
     "customers.title": "عملاؤنا",
-    "customers.subtitle": "نفخر بثقة كبرى المؤسسات والشركات",
+    "customers.subtitle": "نفخر بثقة كبرى المؤسسات والشركات بما في ذلك مسجل، مركز كولومبيا العالمي عمان، هيئة الخدمة والإدارة العامة، والاتحاد الدولي لحماية الطبيعة",
     "contact.title": "اتصل بنا",
     "contact.subtitle": "تواصل مع فريق خبرائنا",
     "contact.name": "الاسم",
