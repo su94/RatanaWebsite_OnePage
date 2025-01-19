@@ -1,6 +1,7 @@
+
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
-import { useLanguage } from "@/contexts/LanguageContext"; // Import useLanguage for translation
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const customers = [
   { id: 1, name: "BenchMark", logo: "attached_assets/benchmark.webp" },
@@ -18,7 +19,7 @@ const customers = [
 
 const Customers = () => {
   const controls = useAnimation();
-  const { t } = useLanguage(); // Use the translation function
+  const { t } = useLanguage();
 
   useEffect(() => {
     const startAnimation = async () => {
@@ -69,6 +70,7 @@ const Customers = () => {
               animate={controls}
               drag="x"
               dragConstraints={{ right: 0, left: -100 * (customers.length - 4) }}
+            >
               {customers.map((customer) => (
                 <div key={customer.id} className="flex-none w-64">
                   <div className="bg-white rounded-lg shadow-sm p-6 h-32 flex items-center justify-center">
