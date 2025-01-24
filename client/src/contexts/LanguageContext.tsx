@@ -115,7 +115,7 @@ const translations: Translations = {
     "footer.contactUs": "Contact Us",
     "footer.location": "Amman, Jordan",
     "footer.phone": "+962 (77) 719-1999",
-    "footer.email": "contact@ratanaconsulting.com",
+    "footer.email": "info@ratanaconsulting.com",
     "footer.copyright": "Ratana\nCopyright © All rights reserved",
   },
   ar: {
@@ -198,7 +198,7 @@ const translations: Translations = {
     "footer.contactUs": "اتصل بنا",
     "footer.location": "الأردن عمان",
     "footer.phone": "00962777191999",
-    "footer.email": "contact@ratanaconsulting.com",
+    "footer.email": "info@ratanaconsulting.com",
     "footer.copyright":
       " رتانا للإستشارات الإعلامية\nحقوق النشر ©  جميع الحقوق محفوظة",
   },
