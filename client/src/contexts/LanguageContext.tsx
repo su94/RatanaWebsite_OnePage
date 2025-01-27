@@ -115,7 +115,7 @@ const translations: Translations = {
     "footer.contactUs": "Contact Us",
     "footer.location": "Amman, Jordan",
     "footer.phone": "+962 (77) 719-1999",
-    "footer.email": "contact@ratanaconsulting.com",
+    "footer.email": "info@ratanaconsulting.com",
     "footer.copyright": "Ratana\nCopyright © All rights reserved",
   },
   ar: {
@@ -154,12 +154,7 @@ const translations: Translations = {
     "ourStory.title": "قصتنا",
     "ourStory.content":
       '"رتانا" هو اسم أردني عربي قديم استخدمه الأنباط في الأردن القديم وهو في الأصل "رتانة النبطة"، ومع الوقت طور الأنباط لهجتهم الخاصة التي ميزتهم عن غيرهم. نحن نفخر بهذا الاسم الذي يعكس تراثنا وهويتنا الأردنية العريقة',
-    "about.content":
-      "مرحباً بكم في رتانا، الشركة الأردنية الرائدة في مجال إنتاج المحتوى والخدمات الإعلامية. نحن نؤمن بقوة المحتوى في التواصل الفعال وتحقيق الأهداف. فريقنا المتخصص يعمل بشغف لتقديم محتوى إبداعي يراعي المعايير اللغوية والقانونية والاجتماعية",
     "about.title": "عن رتانا",
-    "ourStory.title": "قصتنا",
-    "ourStory.content":
-      '"رتانا" هو اسم أردني عربي قديم استخدمه الأنباط في الأردن القديم. نحن نفخر بهذا الاسم الذي يعكس تراثنا وهويتنا الأردنية العريقة',
     "about.content": `<p> مرحباً بكم في رتانا، الشركة الأردنية الرائدة في مجال إنتاج المحتوى والخدمات الإعلامية. 
                       نحن نفخر بفريقنا المكون من محترفي الإعلام السابقين، والسياسيين، وصناع المحتوى الذين 
                       يتمتعون بخبرة واسعة في المنظمات الأهلية، والمؤسسات الرسمية، والقطاع الخاص. </p>
@@ -198,7 +193,7 @@ const translations: Translations = {
     "footer.contactUs": "اتصل بنا",
     "footer.location": "الأردن عمان",
     "footer.phone": "00962777191999",
-    "footer.email": "contact@ratanaconsulting.com",
+    "footer.email": "info@ratanaconsulting.com",
     "footer.copyright":
       " رتانا للإستشارات الإعلامية\nحقوق النشر ©  جميع الحقوق محفوظة",
   },
@@ -211,15 +206,20 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [language, setLanguage] = useState<Language>("en");
+  const [state, setState] = useState<Language>("en");
+
+  const setLanguage = (lang: Language) => {
+    setState(lang);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const t = (key: TranslationKey): string => {
-    return translations[language][key];
+    return translations[state][key];
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
-      <div dir={language === "ar" ? "rtl" : "ltr"}>{children}</div>
+    <LanguageContext.Provider value={{ language: state, setLanguage, t }}>
+      <div dir={state === "ar" ? "rtl" : "ltr"}>{children}</div>
     </LanguageContext.Provider>
   );
 };
